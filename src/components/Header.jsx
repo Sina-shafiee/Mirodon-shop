@@ -40,9 +40,11 @@ const Header = () => {
   }, [windowWidth]);
 
   return (
-    <header className='p-4 md:py-8'>
+    <header className='p-4 z-30'>
       <div className='relative container p-2 mx-auto flex items-center justify-between'>
-        <h1 className='text-2xl font-semibold lg:text-2xl'>MIRODON</h1>
+        <h1 className='text-2xl select-none font-semibold lg:text-2xl'>
+          MIRODON
+        </h1>
 
         <button
           onClick={handleMenuToggle}
@@ -55,15 +57,13 @@ const Header = () => {
 
         <nav
           className={`${
-            isMenuOpen
-              ? 'translate-x-0'
-              : 'translate-x-full invisible opacity-0'
-          } absolute top-12 right-5 md:static md:transition-none rounded-lg overflow-hidden transition-all duration-500 `}
+            isMenuOpen ? 'translate-y-0' : 'translate-y-96 invisible opacity-0'
+          } absolute top-12 right-5 md:static md:transition-none rounded-lg overflow-hidden transition-all duration-500 z-30`}
         >
           <ul className='flex flex-col md:gap-8 md:flex-row bg-white backdrop-blur-sm bg-opacity-80 pr-11 pl-4 py-4 gap-4 md:p-0'>
-            {navLinks.map(({ title, icon, link }) => {
+            {navLinks.map(({ title, icon, link, id }) => {
               return (
-                <li className='min-w-[90px]'>
+                <li key={id} className='min-w-[90px]'>
                   <Link
                     className='flex gap-2 md:hover:bg-gray-100 p-2 md:rounded-lg md:gap-0 md:flex-col items-center'
                     to={link}
@@ -77,7 +77,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <ul className='container scrollbar-hidden mx-auto flex items-center gap-4 justify-between overflow-scroll'>
+      <ul className=' container scrollbar-hidden mx-auto flex items-center gap-4 justify-between overflow-scroll'>
         {pagesLinks.map(({ link, title, id }) => {
           return (
             <Link
