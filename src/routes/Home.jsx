@@ -1,13 +1,18 @@
 import { Fragment } from 'react';
-import { Header, Hero } from '../components';
+import { Hero, Companies, SectionWrapper, Production } from '../components';
 
 const Home = () => {
   return (
     <Fragment>
-      <Header />
-      <main>
-        <Hero />
-      </main>
+      <Hero />
+      <Companies />
+      <SectionWrapper
+        title='Our Production'
+        btnText='view all'
+        link={'/products'}
+      >
+        <Production />
+      </SectionWrapper>
     </Fragment>
   );
 };

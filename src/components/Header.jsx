@@ -7,8 +7,12 @@ import { MdOutlineClose } from 'react-icons/md';
 
 import useWindowWidth from '../hooks/use-windowWidth';
 
+// header section component
+
 const Header = () => {
+  // menu open or close state
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // getting window width
   const windowWidth = useWindowWidth();
 
   const navLinks = [
@@ -27,10 +31,12 @@ const Header = () => {
     { title: 'Contacts', link: '/contacts', id: 7 }
   ];
 
+  // handling menu open and close
   const handleMenuToggle = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
+  // on every window resize based on screen width we close or open menu
   useEffect(() => {
     if (windowWidth > 768) {
       setIsMenuOpen(true);
@@ -42,7 +48,7 @@ const Header = () => {
   return (
     <header className='p-4 z-30'>
       <div className='relative container p-2 mx-auto flex items-center justify-between'>
-        <h1 className='text-2xl select-none font-semibold lg:text-2xl'>
+        <h1 className='text-2xl tracking-wider select-none font-semibold lg:text-3xl'>
           MIRODON
         </h1>
 

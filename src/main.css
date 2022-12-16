@@ -19,3 +19,14 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.btn {
+  @apply px-5 py-2 transition-all duration-200 rounded-lg;
+}
+
+.btn-primary {
+  @apply bg-indigo-500 hover:bg-indigo-600 text-white;
+}
+.btn-secondary {
+  @apply bg-gray-200 hover:bg-gray-300;
+}

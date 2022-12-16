@@ -15,7 +15,9 @@ import {
   MdOutlineKeyboardArrowRight
 } from 'react-icons/md';
 
+// hero carusel component
 const HeroCarousel = () => {
+  // using ref for custom navigations
   const swiperRef = useRef(null);
 
   const slidesData = [

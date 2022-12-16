@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+// custom hook to get browser window width every time user resize the window
 function useWindowWidth() {
   const [windowWidth, setWindowWidth] = useState(undefined);
   useEffect(() => {
