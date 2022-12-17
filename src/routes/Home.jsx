@@ -4,7 +4,9 @@ import {
   Companies,
   SectionWrapper,
   Production,
-  BlogBanner
+  BlogBanner,
+  InstagramPhotos,
+  PostCardList
 } from '../components';
 
 const Home = () => {
@@ -15,11 +17,17 @@ const Home = () => {
       <SectionWrapper
         title='Our Production'
         btnText='view all'
-        link={'/products'}
+        link='/products'
       >
         <Production />
       </SectionWrapper>
       <BlogBanner />
+      <SectionWrapper title='our instagram' btnText='Go to' link='/instagram'>
+        <InstagramPhotos />
+      </SectionWrapper>
+      <SectionWrapper title='our articles' btnText='view all' link='/blog'>
+        <PostCardList />
+      </SectionWrapper>
     </Fragment>
   );
 };

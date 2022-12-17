@@ -4,7 +4,18 @@ import Companies from './Companies';
 import SectionWrapper from './SectionWrapper';
 import Production from './Production';
 import BlogBanner from './BlogBanner';
+import InstagramPhotos from './InstagramPhotos';
+import PostCardList from './PostCardList';
 
 // using index file to make component export and imports easier
 
-export { Header, Hero, Companies, SectionWrapper, Production, BlogBanner };
+export {
+  Header,
+  Hero,
+  Companies,
+  SectionWrapper,
+  Production,
+  BlogBanner,
+  InstagramPhotos,
+  PostCardList
+};

@@ -9,6 +9,7 @@
 
 body {
   overflow-x: hidden;
+  cursor: url('./assets/images/cursor.svg'), auto;
 }
 
 .scrollbar-hidden::-webkit-scrollbar {
@@ -21,7 +22,7 @@ body {
 }
 
 .btn {
-  @apply py-1 px-4 md:px-5 md:py-2 transition-all duration-200 rounded-lg;
+  @apply py-1 px-4 md:px-5 md:py-2 transition-all duration-200 rounded-3xl;
 }
 
 .btn-primary {
