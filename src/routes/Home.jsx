@@ -1,5 +1,11 @@
 import { Fragment } from 'react';
-import { Hero, Companies, SectionWrapper, Production } from '../components';
+import {
+  Hero,
+  Companies,
+  SectionWrapper,
+  Production,
+  BlogBanner
+} from '../components';
 
 const Home = () => {
   return (
@@ -13,6 +19,7 @@ const Home = () => {
       >
         <Production />
       </SectionWrapper>
+      <BlogBanner />
     </Fragment>
   );
 };

@@ -49,7 +49,7 @@ const Header = () => {
     <header className='p-4 z-30'>
       <div className='relative container p-2 mx-auto flex items-center justify-between'>
         <h1 className='text-2xl tracking-wider select-none font-semibold lg:text-3xl'>
-          MIRODON
+          <Link to='/'>MIRODON</Link>
         </h1>
 
         <button

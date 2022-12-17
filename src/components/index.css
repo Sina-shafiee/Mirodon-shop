@@ -1,0 +1,18 @@
+/* custom pagnition bullets swiper */
+
+.swiper-pagination-bullet {
+  width: 11px;
+  height: 11px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease-out;
+}
+
+.swiper-pagination-bullet-active {
+  border-radius: 5px;
+  width: 24px;
+  background: #6c6cdc;
+}

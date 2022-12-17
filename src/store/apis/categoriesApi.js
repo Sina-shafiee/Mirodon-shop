@@ -22,10 +22,7 @@ export const categoriesApi = createApi({
         query: (categoryName) => {
           return {
             url: `/products/category/${categoryName}`,
-            method: 'GET',
-            params: {
-              limit: '4'
-            }
+            method: 'GET'
           };
         }
       })

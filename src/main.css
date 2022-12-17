@@ -21,7 +21,7 @@ body {
 }
 
 .btn {
-  @apply px-5 py-2 transition-all duration-200 rounded-lg;
+  @apply py-1 px-4 md:px-5 md:py-2 transition-all duration-200 rounded-lg;
 }
 
 .btn-primary {

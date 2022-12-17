@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade, Navigation, Autoplay } from 'swiper';
+import { EffectFade, Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 
@@ -24,17 +24,20 @@ const HeroCarousel = () => {
     {
       desc: 'Buy clothes that make you feel empowered and confident.',
       imgUrl: bannerOne,
-      id: 1
+      id: 1,
+      off: 79
     },
     {
       desc: `Let's create fashion that isn't dictated by gender or beauty standards.`,
       imgUrl: bannerTwo,
-      id: 2
+      id: 2,
+      off: 39
     },
     {
       desc: 'You deserve the best life - so go ahead and make that change.',
       imgUrl: bannerThere,
-      id: 3
+      id: 3,
+      off: 49
     }
   ];
 
@@ -44,17 +47,13 @@ const HeroCarousel = () => {
         spaceBetween={30}
         effect={'fade'}
         navigation={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false
-        }}
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
-        modules={[EffectFade, Navigation, Autoplay]}
+        modules={[EffectFade, Navigation]}
         className='rounded-xl relative w-full h-full cursor-grab max-h-[480px]'
       >
-        {slidesData.map(({ desc, imgUrl, id }) => {
+        {slidesData.map(({ desc, imgUrl, id, off }) => {
           return (
             <SwiperSlide key={id}>
               <div
@@ -65,7 +64,7 @@ const HeroCarousel = () => {
                   <p className='p-2 mt-8 text-lg md:text-4xl max-w-md'>
                     {desc}
                   </p>
-                  <p className='py-4'>- 45% off</p>
+                  <p className='py-4'>- {off}% off</p>
                   <Link
                     className='px-4 py-1 md:px-6 md:py-2 max-w-max md:text-lg text-white bg-indigo-500 rounded-lg duration-150 transition-colors hover:bg-indigo-600'
                     to='/products'

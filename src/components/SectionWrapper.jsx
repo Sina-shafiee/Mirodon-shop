@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const SectionWrapper = ({ children, title, btnText, link }) => {
   const headerContent = (
     <section className='flex justify-between items-center'>
-      <h2 className='text-2xl font-semibold capitalize '>{title}</h2>
+      <h2 className='text-xl md:text-2xl font-semibold capitalize '>{title}</h2>
       <Link to={link} className='btn btn-primary'>
         {btnText}
       </Link>
