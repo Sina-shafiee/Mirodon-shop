@@ -23,12 +23,9 @@ const Companies = () => {
       <div className='grid grid-cols-2 align-middle sm:grid-cols-3 lg:grid-cols-6 place-items-center gap-4'>
         {compainesData.map(({ id, title, imgUrl }) => {
           return (
-            <LazyLoadImage
-              className='max-h-20'
-              src={imgUrl}
-              alt={title}
-              key={id}
-            />
+            <div key={id} className='min-h-[80px] min-w[126.4px]'>
+              <LazyLoadImage className='max-h-20' src={imgUrl} alt={title} />
+            </div>
           );
         })}
       </div>

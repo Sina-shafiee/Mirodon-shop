@@ -60,7 +60,7 @@ const HeroCarousel = () => {
                 className='flex justify-end md:text-2xl bg-black flex-col min-w-full px-6 py-2 backdrop-blur-lg md:p-20 min-h-[400px] md:gap-8 gap-4 md:min-h-[480px] bg-cover bg-center'
                 style={{ backgroundImage: `url(${imgUrl})` }}
               >
-                <div className='text-black bg-gray-200 p-3 rounded-lg bg-opacity-40 backdrop-blur-sm md:bg-transparent md:text-white md:backdrop-blur-0'>
+                <div className='text-black bg-gray-200 pl-3 pb-3 rounded-lg bg-opacity-90 backdrop-blur-sm md:bg-transparent md:text-white md:backdrop-blur-0'>
                   <p className='p-2 mt-8 text-lg md:text-4xl max-w-md'>
                     {desc}
                   </p>

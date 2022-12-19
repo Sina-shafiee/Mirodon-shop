@@ -8,6 +8,7 @@ import InstagramPhotos from './InstagramPhotos';
 import PostCardList from './PostCardList';
 import Footer from './Footer';
 import Skeleton from './Skeleton';
+import SpinnerLoading from './SpinnerLoading';
 
 // using index file to make component export and imports easier
 
@@ -21,5 +22,6 @@ export {
   InstagramPhotos,
   PostCardList,
   Skeleton,
-  Footer
+  Footer,
+  SpinnerLoading
 };
