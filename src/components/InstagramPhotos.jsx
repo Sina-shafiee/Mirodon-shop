@@ -7,10 +7,14 @@ import Skeleton from './Skeleton';
 const InstagramPhotos = () => {
   const { data, isLoading, error } = useFetchPhotosQuery();
 
-  console.log(data);
   let content;
   if (isLoading) {
-    content = <Skeleton times={6} className='w-[300px] h-96' />;
+    content = (
+      <Skeleton
+        times={6}
+        className='w-[300px] lg:min-w-[24rem] lg:min-h-[384px] h-96'
+      />
+    );
   } else if (error) {
     content = <p className='text-center'>internal Error</p>;
   } else {
@@ -24,7 +28,6 @@ const InstagramPhotos = () => {
             src={regular}
             alt={alt_description}
             placeholderSrc={thumb}
-            placeholder={thumb}
           />
         );
       }

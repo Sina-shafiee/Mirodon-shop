@@ -8,15 +8,15 @@ const BlogBanner = () => {
         className=' min-h-[480px] bg-black flex flex-col bg-left px-8 md:px-14 justify-end pb-4 md:pb-12 rounded-xl md:bg-center bg-cover text-white'
         style={{ backgroundImage: `url(${blogBannerBg})` }}
       >
-        <h2 className='text-xl md:text-2xl font-semibold max-w-xs md:max-w-lg'>
+        <h2 className='text-xl md:text-3xl font-semibold max-w-xs md:max-w-lg'>
           What are some good tips for saving money while shopping?
         </h2>
-        <p className=' max-w-xs md:max-w-lg mt-2'>
+        <p className='md:text-lg max-w-xs md:max-w-lg mt-2'>
           There is no definitive answer to this question as everyone's
           preferences are..
         </p>
 
-        <button className='btn self-start bg-white text-gray-900 mt-4 '>
+        <button className='btn mb-12 self-start bg-white text-gray-900 mt-4 '>
           <Link to='/blog'>Read More</Link>
         </button>
       </div>

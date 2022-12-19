@@ -6,6 +6,8 @@ import Production from './Production';
 import BlogBanner from './BlogBanner';
 import InstagramPhotos from './InstagramPhotos';
 import PostCardList from './PostCardList';
+import Footer from './Footer';
+import Skeleton from './Skeleton';
 
 // using index file to make component export and imports easier
 
@@ -17,5 +19,7 @@ export {
   Production,
   BlogBanner,
   InstagramPhotos,
-  PostCardList
+  PostCardList,
+  Skeleton,
+  Footer
 };

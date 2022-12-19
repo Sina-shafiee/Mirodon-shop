@@ -43,9 +43,9 @@ const PostCardList = () => {
   ];
 
   return (
-    <section className='flex mt-4 flex-wrap justify-around gap-4'>
+    <section className='flex mt-4 mb-12 flex-wrap justify-around gap-4'>
       {postsData.map((post) => {
-        return <PostCard data={post} />;
+        return <PostCard key={post.id} data={post} />;
       })}
     </section>
   );

@@ -4,7 +4,7 @@
 
 :root {
   font-family: 'Poppins', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 body {
@@ -22,7 +22,7 @@ body {
 }
 
 .btn {
-  @apply py-1 px-4 md:px-5 md:py-2 transition-all duration-200 rounded-3xl;
+  @apply py-2 px-4 md:px-5 md:py-2 transition-all shadow-sm duration-200 rounded-3xl;
 }
 
 .btn-primary {
@@ -30,4 +30,10 @@ body {
 }
 .btn-secondary {
   @apply bg-gray-200 hover:bg-gray-300;
+}
+.btn-tertiary {
+  @apply bg-green-400 hover:bg-green-500;
+}
+.btn-black {
+  @apply bg-black text-white;
 }

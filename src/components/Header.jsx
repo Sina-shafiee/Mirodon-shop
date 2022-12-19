@@ -1,24 +1,23 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { BsCart2, BsHeart } from 'react-icons/bs';
-import { RxHamburgerMenu, RxPerson } from 'react-icons/rx';
-import { MdOutlineClose } from 'react-icons/md';
-
-import useWindowWidth from '../hooks/use-windowWidth';
+import { RxPerson } from 'react-icons/rx';
+import useAuth from '../hooks/useAuth';
 
 // header section component
 
 const Header = () => {
-  // menu open or close state
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // getting window width
-  const windowWidth = useWindowWidth();
+  const user = useAuth();
 
   const navLinks = [
     { title: 'Favorites', icon: <BsHeart />, id: 1, link: '/favorites' },
     { title: 'Your Cart', icon: <BsCart2 />, id: 2, link: 'cart' },
-    { title: 'Sign In', icon: <RxPerson />, id: 3, link: 'sign-in' }
+    {
+      title: user ? 'Profile' : 'Sign In',
+      icon: <RxPerson />,
+      id: 3,
+      link: user ? 'profile' : 'sign-in'
+    }
   ];
 
   const pagesLinks = [
@@ -31,20 +30,6 @@ const Header = () => {
     { title: 'Contacts', link: '/contacts', id: 7 }
   ];
 
-  // handling menu open and close
-  const handleMenuToggle = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
-
-  // on every window resize based on screen width we close or open menu
-  useEffect(() => {
-    if (windowWidth > 768) {
-      setIsMenuOpen(true);
-    } else {
-      setIsMenuOpen(false);
-    }
-  }, [windowWidth]);
-
   return (
     <header className='p-4 z-30'>
       <div className='relative container p-2 mx-auto flex items-center justify-between'>
@@ -52,26 +37,16 @@ const Header = () => {
           <Link to='/'>MIRODON</Link>
         </h1>
 
-        <button
-          onClick={handleMenuToggle}
-          className={`text-3xl md:hidden ${
-            isMenuOpen ? 'active:rotate-45' : 'active:-rotate-45'
-          } transition-all duration-300`}
-        >
-          {isMenuOpen ? <MdOutlineClose /> : <RxHamburgerMenu />}
-        </button>
-
         <nav
-          className={`${
-            isMenuOpen ? 'translate-y-0' : 'translate-y-96 invisible opacity-0'
-          } absolute top-12 right-5 md:static md:transition-none rounded-lg overflow-hidden transition-all duration-500 z-30`}
+          className={`
+            fixed w-full sm:w-max bottom-0 left-0 sm:static md:transition-none rounded-lg overflow-hidden transition-all duration-500 z-30`}
         >
-          <ul className='flex flex-col md:gap-8 md:flex-row bg-white backdrop-blur-sm bg-opacity-80 pr-11 pl-4 py-4 gap-4 md:p-0'>
+          <ul className='flex flex-row justify-around bg-white py-2 gap-4 md:p-0'>
             {navLinks.map(({ title, icon, link, id }) => {
               return (
                 <li key={id} className='min-w-[90px]'>
                   <Link
-                    className='flex gap-2 md:hover:bg-gray-100 p-2 md:rounded-lg md:gap-0 md:flex-col items-center'
+                    className='flex p-2 gap-1 sm:min-w-[6rem] justify-center md:p-3 md:hover:bg-gray-100 md:rounded-lg md:gap-0 flex-col text-center items-center'
                     to={link}
                   >
                     <span className='text-xl'>{icon}</span>
