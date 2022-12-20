@@ -7,6 +7,7 @@ import { addUser } from '../store';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { ImSpinner8 } from 'react-icons/im';
 import useAuth from '../hooks/useAuth';
+import { motion } from 'framer-motion';
 
 export default function SignIn() {
   const [username, setUserName] = useState('');
@@ -32,7 +33,13 @@ export default function SignIn() {
   }, [result]);
 
   return (
-    <div className='relative flex flex-col justify-center min-h-[79vh] overflow-hidden'>
+    <motion.main
+      initial={{ opacity: 0, translateX: 999 }}
+      animate={{ opacity: 1, translateX: 0 }}
+      exit={{ opacity: 0, translateX: 999 }}
+      transition={{ duration: 0.4 }}
+      className='relative flex flex-col justify-center min-h-[79vh] overflow-hidden'
+    >
       <div className='w-full p-6 m-auto bg-white rounded-md md:shadow-md lg:max-w-xl'>
         <h1 className='text-3xl font-semibold text-center text-purple-700'>
           Sign in
@@ -113,6 +120,6 @@ export default function SignIn() {
           please use this demo username: "ckensleyk" and password: "tq7kPXyf"
         </p>
       </div>
-    </div>
+    </motion.main>
   );
 }
