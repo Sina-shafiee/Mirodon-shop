@@ -100,9 +100,9 @@ const ProductPage = () => {
 
   return (
     <motion.main
-      initial={{ opacity: 0, translateX: 999 }}
-      animate={{ opacity: 1, translateX: 0 }}
-      exit={{ opacity: 0, translateX: 999 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
     >
       <section className='container text-indigo-600 p-4 mx-auto flex gap-2 items-center'>

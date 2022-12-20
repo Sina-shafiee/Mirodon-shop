@@ -1,10 +1,7 @@
-import { CgSpinner } from 'react-icons/cg';
-
 const SpinnerLoading = () => {
+  // removed spinner
   return (
-    <section className='min-h-[80vh] text-4xl flex items-center justify-center'>
-      <CgSpinner className='animate-spin' />
-    </section>
+    <section className='min-h-[80vh] text-4xl flex items-center justify-center'></section>
   );
 };
 

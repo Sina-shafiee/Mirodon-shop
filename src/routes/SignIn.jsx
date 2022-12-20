@@ -34,9 +34,9 @@ export default function SignIn() {
 
   return (
     <motion.main
-      initial={{ opacity: 0, translateX: 999 }}
-      animate={{ opacity: 1, translateX: 0 }}
-      exit={{ opacity: 0, translateX: 999 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
       className='relative flex flex-col justify-center min-h-[79vh] overflow-hidden'
     >
