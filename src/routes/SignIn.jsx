@@ -8,6 +8,7 @@ import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { ImSpinner8 } from 'react-icons/im';
 import useAuth from '../hooks/useAuth';
 import { motion } from 'framer-motion';
+import { IoIosArrowForward } from 'react-icons/io';
 
 export default function SignIn() {
   const [username, setUserName] = useState('');
@@ -40,6 +41,14 @@ export default function SignIn() {
       transition={{ duration: 0.4 }}
       className='relative flex flex-col justify-center min-h-[79vh] overflow-hidden'
     >
+      <section className=' text-indigo-600 container mx-auto p-4 flex gap-2 items-center'>
+        <Link to='/'>Home</Link>
+        <span>
+          <IoIosArrowForward className='text-sm text-black' />
+        </span>
+        <p className='text-black'>Sign In</p>
+      </section>
+
       <div className='w-full p-6 m-auto bg-white rounded-md md:shadow-md lg:max-w-xl'>
         <h1 className='text-3xl font-semibold text-center text-purple-700'>
           Sign in
@@ -56,6 +65,7 @@ export default function SignIn() {
               type='text'
               autoComplete='username'
               value={username}
+              required
               onChange={(e) => setUserName(e.target.value)}
               className='block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40'
             />
@@ -69,19 +79,22 @@ export default function SignIn() {
             </label>
             <div className='relative'>
               <input
+                required
                 autoComplete='current-password'
                 type={showPassword ? 'text' : 'password'}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className='block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40'
               />
-              <button
-                onClick={() => setShowPassword((prev) => !prev)}
-                type='button'
-                className='absolute right-4 top-1/2 text-xl translate-y-[-50%] z-10'
-              >
-                {showPassword ? <FiEyeOff /> : <FiEye />}
-              </button>
+              {password.length ? (
+                <button
+                  onClick={() => setShowPassword((prev) => !prev)}
+                  type='button'
+                  className='absolute right-4 top-1/2 text-xl translate-y-[-50%] z-10'
+                >
+                  {showPassword ? <FiEyeOff /> : <FiEye />}
+                </button>
+              ) : null}
             </div>
           </div>
 
@@ -116,8 +129,15 @@ export default function SignIn() {
             Sign up
           </Link>
         </p>
-        <p className='text-red-500 mt-2 text-sm text-center'>
-          please use this demo username: "ckensleyk" and password: "tq7kPXyf"
+        <p className='mt-2 text-sm text-center'>
+          Please use this demo username:{' '}
+          <span className='text-base cursor-text font-normal text-red-500'>
+            "ckensleyk"
+          </span>{' '}
+          and password:{' '}
+          <span className='text-base cursor-text font-normal text-red-500'>
+            "tq7kPXyf"
+          </span>
         </p>
       </div>
     </motion.main>

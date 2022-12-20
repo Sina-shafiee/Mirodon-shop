@@ -9,8 +9,9 @@ const NotFound = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
+      className='p-4 container mx-auto'
     >
-      <section className='container text-indigo-600 p-4 mx-auto flex gap-2 items-center'>
+      <section className=' text-indigo-600  flex gap-2 items-center'>
         <Link to='/'>Home</Link>
         <span>
           <IoIosArrowForward className='text-sm text-black' />

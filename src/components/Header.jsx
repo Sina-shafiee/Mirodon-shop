@@ -16,7 +16,7 @@ const Header = () => {
   const windowWidth = useWindowWidth();
 
   const navLinks = [
-    { title: 'Favorites', icon: <BsHeart />, id: 1, link: '/favorites' },
+    // { title: 'Favorites', icon: <BsHeart />, id: 1, link: '/favorites' },
     { title: 'Your Cart', icon: <BsCart2 />, id: 2, link: 'cart' },
     {
       title: user ? 'Profile' : 'Sign In',
@@ -110,7 +110,7 @@ const Header = () => {
         {pagesLinks.map(({ link, title, id }) => {
           return (
             <Link
-              className='whitespace-nowrap p-2 rounded-lg'
+              className='whitespace-nowrap p-2 sm:p-0 rounded-lg'
               key={id}
               onClick={() => windowWidth < 640 && setIsMenuOpen(false)}
               to={link}
