@@ -96,7 +96,7 @@ const Header = () => {
       <ul
         className={`${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        } container fixed right-0 top-0 flex-col z-40 shadow-sm transition-transform duration-500 bg-white w-[299px] items-start p-8 h-screen scrollbar-hidden mx-auto flex sm:items-center gap-4 sm:justify-between overflow-y-scroll sm:static sm:shadow-none sm:flex-row sm:h-max sm:w-auto sm:p-4`}
+        } container fixed right-0 top-0 flex-col z-40 shadow-sm transition-transform duration-500 sm:transition-none bg-white w-[299px] items-start p-8 h-screen scrollbar-hidden mx-auto flex sm:items-center gap-4 sm:justify-between overflow-y-scroll sm:static sm:shadow-none sm:flex-row sm:h-max sm:w-auto sm:p-4`}
       >
         <button
           onClick={() => setIsMenuOpen(false)}
@@ -112,7 +112,7 @@ const Header = () => {
             <Link
               className='whitespace-nowrap p-2 rounded-lg'
               key={id}
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => windowWidth < 640 && setIsMenuOpen(false)}
               to={link}
             >
               {title}
