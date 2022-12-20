@@ -6,7 +6,6 @@ const NotFound = lazy(() => import('./routes/NotFound'));
 const SignIn = lazy(() => import('./routes/SignIn'));
 const Profile = lazy(() => import('./routes/Profile'));
 const ProductPage = lazy(() => import('./routes/ProductPage'));
-
 import Home from './routes/Home';
 
 import ScrollToTop from './util/scrollToTop';
