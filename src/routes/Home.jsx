@@ -10,12 +10,7 @@ import {
 
 const Home = () => {
   return (
-    <div
-    // initial={{ opacity: 0, translateX: -999 }}
-    // animate={{ opacity: 1, translateX: 0 }}
-    // exit={{ opacity: 0, translateX: -999 }}
-    // transition={{ duration: 0.4 }}
-    >
+    <div>
       <Hero />
 
       <Companies />
