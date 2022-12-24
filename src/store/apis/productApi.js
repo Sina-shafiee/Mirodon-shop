@@ -6,6 +6,7 @@ export const productApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://fakestoreapi.com/',
     fetchFn: async (...args) => {
+      // for DEV ONLY!
       // await pause(4499);
       return fetch(...args);
     }

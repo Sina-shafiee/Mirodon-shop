@@ -24,7 +24,7 @@ const InstagramPhotos = () => {
           <LazyLoadImage
             effect='blur'
             key={id}
-            className='max-w-[300px] max-h-[300px] lg:min-h-[384px] object-cover rounded-md lg:max-w-sm min-h-[300px] min-w-[300px] lg:min-w-[24rem]'
+            className='max-w-[300px] hover:brightness-75 max-h-[300px] lg:min-h-[384px] object-cover rounded-md lg:max-w-sm min-h-[300px] min-w-[300px] lg:min-w-[24rem]'
             src={regular}
             alt={alt_description}
             placeholderSrc={thumb}

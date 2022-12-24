@@ -1,10 +1,10 @@
-import { Navigate } from 'react-router';
+import { Navigate, Outlet } from 'react-router';
 import useAuth from '../hooks/useAuth';
 
-const PrivateRoute = ({ children }) => {
+const PrivateRoute = () => {
   const user = useAuth();
 
-  return user ? children : <Navigate to='/sign-in' />;
+  return user ? <Outlet /> : <Navigate to='/sign-in' />;
 };
 
 export default PrivateRoute;

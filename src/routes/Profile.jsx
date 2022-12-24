@@ -47,7 +47,7 @@ const Profile = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
     >
-      <section className=' text-indigo-600  flex gap-2 items-center'>
+      <section className=' text-indigo-600 flex gap-2 items-center'>
         <Link to='/'>Home</Link>
         <span>
           <IoIosArrowForward className='text-sm text-black' />

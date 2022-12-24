@@ -6,11 +6,13 @@ import { categoriesApi } from './apis/categoriesApi';
 import { photoApi } from './apis/photosApi';
 import { productApi } from './apis/productApi';
 import userReducer from './slices/userSlice';
+import cartReducer from './slices/cartSlice';
 
 // store setup
 export const store = configureStore({
   reducer: {
     user: userReducer,
+    cart: cartReducer,
     [categoriesApi.reducerPath]: categoriesApi.reducer,
     [photoApi.reducerPath]: photoApi.reducer,
     [productApi.reducerPath]: productApi.reducer,
@@ -31,10 +33,15 @@ export {
   useGetAllCategoriesQuery,
   useGetSingleCategoryProdcutsQuery
 } from './apis/categoriesApi';
+
 export { useFetchPhotosQuery } from './apis/photosApi';
+
 export {
   useFetchProductQuery,
   useFetchSmiliarProductsQuery
 } from './apis/productApi';
+
 export { useLoginMutation } from './apis/authApi';
+
 export { addUser, removeUser } from './slices/userSlice';
+export { addToCart, removeFromCart } from './slices/cartSlice';

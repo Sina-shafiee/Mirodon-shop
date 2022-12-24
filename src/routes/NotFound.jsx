@@ -9,16 +9,16 @@ const NotFound = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
-      className='p-4 container mx-auto'
     >
-      <section className=' text-indigo-600  flex gap-2 items-center'>
+      <section className=' text-indigo-600 container mx-auto px-4 flex gap-2 items-center'>
         <Link to='/'>Home</Link>
         <span>
           <IoIosArrowForward className='text-sm text-black' />
         </span>
         <p className='text-black'>Not found</p>
       </section>
-      <section className='flex items-center h-full p-16'>
+
+      <section className='flex items-center p-4 py-16 container mx-auto h-full'>
         <div className='container flex flex-col items-center justify-center px-5 mx-auto my-8'>
           <div className='max-w-md text-center'>
             <h2 className='mb-8 font-extrabold text-9xl'>

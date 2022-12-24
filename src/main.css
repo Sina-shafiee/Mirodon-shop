@@ -12,6 +12,25 @@ body {
   cursor: url('./assets/images/cursor.svg'), auto;
 }
 
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #312b2b #ffffff;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #312b2b;
+  border-radius: 14px;
+  border: 1px solid #ffffff;
+}
+
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }

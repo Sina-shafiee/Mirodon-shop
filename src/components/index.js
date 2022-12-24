@@ -9,6 +9,11 @@ import PostCardList from './PostCardList';
 import Footer from './Footer';
 import Skeleton from './Skeleton';
 import SpinnerLoading from './SpinnerLoading';
+import ProductsCarousel from './ProductsCarousel';
+import InfoTabs from './InfoTabs';
+import ContactInfoForm from './ContactInfoForm';
+import CartBox from './CartBox';
+import PaymentMethodForm from './PaymentMethodForm';
 
 // using index file to make component export and imports easier
 
@@ -23,5 +28,10 @@ export {
   PostCardList,
   Skeleton,
   Footer,
-  SpinnerLoading
+  SpinnerLoading,
+  ProductsCarousel,
+  InfoTabs,
+  ContactInfoForm,
+  CartBox,
+  PaymentMethodForm
 };

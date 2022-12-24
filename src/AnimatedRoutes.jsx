@@ -6,6 +6,7 @@ const NotFound = lazy(() => import('./routes/NotFound'));
 const SignIn = lazy(() => import('./routes/SignIn'));
 const Profile = lazy(() => import('./routes/Profile'));
 const ProductPage = lazy(() => import('./routes/ProductPage'));
+const Cart = lazy(() => import('./routes/Cart'));
 import Home from './routes/Home';
 
 import ScrollToTop from './util/scrollToTop';
@@ -37,16 +38,24 @@ function AnimatedRoutes() {
             </Suspense>
           }
         />
-        <Route
-          path='/profile'
-          element={
-            <PrivateRoute>
+        <Route element={<PrivateRoute />}>
+          <Route
+            path='/profile'
+            element={
               <Suspense fallback={<SpinnerLoading />}>
                 <Profile />
               </Suspense>
-            </PrivateRoute>
+            }
+          />
+        </Route>
+        <Route
+          path='/cart'
+          element={
+            <Suspense fallback={<SpinnerLoading />}>
+              <Cart />
+            </Suspense>
           }
-        ></Route>
+        />
         <Route
           path='*'
           element={

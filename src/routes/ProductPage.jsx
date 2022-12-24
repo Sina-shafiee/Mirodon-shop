@@ -7,15 +7,28 @@ import { IoIosArrowForward } from 'react-icons/io';
 import { useFetchProductQuery } from '../store';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import { Skeleton } from '../components';
-import { BsHeart } from 'react-icons/bs';
-import ProductsCarousel from '../components/ProductsCarousel';
+import { Skeleton, ProductsCarousel } from '../components';
 import useWindowWidth from '../hooks/use-windowWidth';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../store';
+
 const ProductPage = () => {
+  const cart = useSelector((state) => state.cart.products);
   const { id } = useParams();
+  const dispatch = useDispatch();
   const { data, isLoading, error } = useFetchProductQuery(id);
   const windowWidth = useWindowWidth();
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(data));
+  };
+
+  const productAlreadyExistOnCart = () => {
+    const check = cart.filter((product) => product.id === data.id);
+
+    return check.length === 1;
+  };
 
   let content;
   if (isLoading) {
@@ -27,7 +40,6 @@ const ProductPage = () => {
           <Skeleton times={1} className='w-2/4 h-14' />
           <div className='flex items-center gap-4'>
             <Skeleton times={1} className='w-1/3 h-12' />
-            <Skeleton times={1} className='w-12 h-12 rounded-full' />
           </div>
           <Skeleton times={1} className='w-full h-8' />
           <Skeleton times={1} className='w-full h-8' />
@@ -55,12 +67,14 @@ const ProductPage = () => {
           <h2 className='font-semibold'>{data.title}</h2>
           <p className='font-bold text-3xl p-2'>${data.price}</p>
           <div className='flex items-center gap-4'>
-            <button className='btn btn-black'>Add to cart</button>
             <button
-              times={1}
-              className='w-11 h-11 leading-[0] rounded-full border border-black text-xl flex items-center justify-center'
+              disabled={productAlreadyExistOnCart()}
+              onClick={handleAddToCart}
+              className={`btn ${
+                productAlreadyExistOnCart() ? 'btn-secondary' : 'btn-black'
+              }`}
             >
-              <BsHeart />
+              {productAlreadyExistOnCart() ? 'Added' : 'Add to cart'}
             </button>
           </div>
           <p className='mt-4'>{data.description.substring(0, 300)}..</p>
