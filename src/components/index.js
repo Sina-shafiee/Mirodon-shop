@@ -14,6 +14,7 @@ import InfoTabs from './InfoTabs';
 import ContactInfoForm from './ContactInfoForm';
 import CartBox from './CartBox';
 import PaymentMethodForm from './PaymentMethodForm';
+import ProductTabs from './ProductTabs';
 
 // using index file to make component export and imports easier
 
@@ -33,5 +34,6 @@ export {
   InfoTabs,
   ContactInfoForm,
   CartBox,
-  PaymentMethodForm
+  PaymentMethodForm,
+  ProductTabs
 };

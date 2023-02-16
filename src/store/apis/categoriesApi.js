@@ -1,14 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import fakeStoreApi from './fakeStoreApi';
 
 // fecthing categories data with rtk query
-export const categoriesApi = createApi({
-  reducerPath: 'categories',
-  baseQuery: fetchBaseQuery({
-    baseUrl: 'https://fakestoreapi.com/'
-  }),
+export const categoriesApi = fakeStoreApi.injectEndpoints({
   endpoints: (builder) => {
     return {
-      // fetching all categroies
+      // fetching all categories
       getAllCategories: builder.query({
         query: () => {
           return {
@@ -17,7 +14,7 @@ export const categoriesApi = createApi({
           };
         }
       }),
-      // fecthing single category products
+      // fetching single category products
       getSingleCategoryProdcuts: builder.query({
         query: (categoryName) => {
           return {
