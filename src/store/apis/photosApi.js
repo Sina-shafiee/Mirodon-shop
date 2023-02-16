@@ -18,7 +18,7 @@ export const photoApi = createApi({
               Authorization: `Client-ID ${API_KEY}`
             },
             params: {
-              query: 'shopping',
+              query: 'lux shop',
               per_page: 6,
               order_by: 'latest',
               orientation: 'squarish'

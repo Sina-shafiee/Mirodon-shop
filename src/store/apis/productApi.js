@@ -1,17 +1,6 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { pause } from '../../util/pause';
+import fakeStoreApi from './fakeStoreApi';
 
-export const productApi = createApi({
-  reducerPath: 'products',
-  baseQuery: fetchBaseQuery({
-    baseUrl: 'https://fakestoreapi.com/',
-    fetchFn: async (...args) => {
-      // for DEV ONLY!
-      // await pause(4499);
-      return fetch(...args);
-    }
-  }),
-
+export const productApi = fakeStoreApi.injectEndpoints({
   endpoints: (builder) => {
     return {
       fetchProduct: builder.query({
