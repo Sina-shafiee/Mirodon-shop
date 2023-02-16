@@ -10,14 +10,12 @@ import useAuth from '../hooks/useAuth';
 import { motion } from 'framer-motion';
 import { IoIosArrowForward } from 'react-icons/io';
 
-export default function SignIn() {
+const SignIn = () => {
   const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
-  const user = useAuth();
-
   const [login, result] = useLoginMutation();
 
   const onFormSubmit = (e) => {
@@ -142,4 +140,5 @@ export default function SignIn() {
       </div>
     </motion.main>
   );
-}
+};
+export default SignIn;
