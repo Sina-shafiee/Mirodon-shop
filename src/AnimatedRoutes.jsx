@@ -11,6 +11,7 @@ const Cart = lazy(() => import('./routes/Cart'));
 import Home from './routes/Home';
 import PrivateRoute from './routes/PrivateRoute';
 import { SpinnerLoading } from './components';
+import ScrollToTop from './util/scrollToTop';
 
 const routes = [
   {
@@ -70,6 +71,7 @@ function AnimatedRoutes() {
 
   return (
     <AnimatePresence mode='wait'>
+      <ScrollToTop />
       <Routes key={location.pathname} location={location}>
         {routes.map(({ path, element, children }) => (
           <Route key={path} path={path} element={element}>
