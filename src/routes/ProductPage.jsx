@@ -7,7 +7,7 @@ import { IoIosArrowForward } from 'react-icons/io';
 import { useFetchProductQuery } from '../store';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import { Skeleton, ProductsCarousel } from '../components';
+import { Skeleton, ProductsCarousel, ProductTabs } from '../components';
 import useWindowWidth from '../hooks/use-windowWidth';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -56,30 +56,33 @@ const ProductPage = () => {
     );
   } else {
     content = (
-      <section className='flex mt-6 flex-wrap container justify-center gap-8 p-4 mx-auto'>
-        <div className='md:min-h-[49vh] flex items-center justify-center p-4 w-full md:w-2/5'>
-          <LazyLoadImage
-            src={data.image}
-            className='w-full max-h-[49vh] object-center object-contain'
-          />
-        </div>
-        <div className='w-full md:w-1/3'>
-          <h2 className='font-semibold'>{data.title}</h2>
-          <p className='font-bold text-3xl p-2'>${data.price}</p>
-          <div className='flex items-center gap-4'>
-            <button
-              disabled={productAlreadyExistOnCart()}
-              onClick={handleAddToCart}
-              className={`btn ${
-                productAlreadyExistOnCart() ? 'btn-secondary' : 'btn-black'
-              }`}
-            >
-              {productAlreadyExistOnCart() ? 'Added' : 'Add to cart'}
-            </button>
+      <>
+        <section className='flex mt-6 flex-wrap container justify-center gap-8 p-4 mx-auto'>
+          <div className='flex h-[49vh] overflow-hidden items-center justify-center p-4 w-full md:w-2/5'>
+            <LazyLoadImage
+              src={data.image}
+              className='w-full h-[49vh] object-center object-contain'
+            />
           </div>
-          <p className='mt-4'>{data.description.substring(0, 300)}..</p>
-        </div>
-      </section>
+          <div className='w-full md:w-1/3'>
+            <h2 className='font-semibold'>{data.title}</h2>
+            <p className='font-bold text-3xl p-2'>${data.price}</p>
+            <div className='flex items-center gap-4'>
+              <button
+                disabled={productAlreadyExistOnCart()}
+                onClick={handleAddToCart}
+                className={`btn ${
+                  productAlreadyExistOnCart() ? 'btn-secondary' : 'btn-black'
+                }`}
+              >
+                {productAlreadyExistOnCart() ? 'Added' : `Add to cart`}
+              </button>
+            </div>
+            <p className='mt-4'>{data.description.substring(0, 300)}..</p>
+          </div>
+        </section>
+        <ProductTabs />
+      </>
     );
   }
 

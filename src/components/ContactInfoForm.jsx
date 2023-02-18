@@ -69,8 +69,7 @@ const ContactInfoForm = () => {
             type='number'
             required
             id='zipcode'
-            autoCapitalize='first-name'
-            className=' mt-2 py-3 px-4 rounded-3xl bg-white'
+            className='w-full mt-2 py-3 px-4 rounded-3xl bg-white'
             name='zipcode'
             placeholder='zip code'
           />
